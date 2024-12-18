@@ -11,50 +11,79 @@
       margin: 0;
       padding: 0;
       background-color: #f8f9fa;
-      height: 100vh; /* Pastikan tinggi halaman memenuhi viewport */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .container {
+      padding: 1rem;
     }
 
-    /* Kontainer Utama */
-    .container {
-      width: 90%; /* Ukuran default untuk layar kecil */
-      max-width: 600px; /* Batasi ukuran maksimum container */
+    /* Grid Produk */
+    .product {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Kartu Produk */
+    .card {
       background: #fff;
       border: 1px solid #ddd;
-      border-radius: 10px;
+      border-radius: 8px;
       padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
-
-    /* Gambar Produk */
-    .container img {
-      max-width: 100%; /* Gambar tidak akan melebihi lebar container */
+    .card img {
+      width: 100%;
       height: auto;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    .card p {
+      color: #555;
     }
 
-    /* Judul */
-    .container h1 {
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-    }
-
-    /* Tombol */
-    .container a {
-      display: inline-block;
+    /* Tombol WhatsApp */
+    .whatsapp-btn {
       background-color: #25d366;
       color: white;
       padding: 0.5rem 1rem;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
-      margin-top: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
-    .container a:hover {
+    .whatsapp-btn:hover {
       background-color: #1da851;
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
+      .product {
+        grid-template-columns: repeat(3, 1fr); /* Tiga kolom di layar besar */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .product {
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom di layar sedang */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+      }
     }
   </style>
 </head>
