@@ -74,6 +74,8 @@
       padding: 1rem;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       text-align: center;
+	  position: relative;
+	  overflow: hidden;
     }
     .card img {
       width: 100%;
@@ -85,6 +87,26 @@
     .card img:hover {
       transform: scale(1.1); /* Menambahkan efek zoom ketika gambar dihover */
     }
+	
+	/* Ikon Stok Habis */
+	.out-of-stock {
+	  position: absolute;
+	  top: 33%; /* Menempatkan ikon di tengah vertikal */
+	  left: 50%; /* Menempatkan ikon di tengah horizontal */
+	  transform: translate(-50%, -50%); /* Menggeser posisi ikon agar tepat di tengah */
+	  background-color: red; /* Background merah */
+	  color: white;
+	  padding: 5px 10px;
+	  border-radius: 5px;
+	  font-size: 1rem;
+	  font-weight: bold;
+	  display: block; /* Tampilkan ikon */
+	  z-index: 10; /* Pastikan ikon tampil di atas gambar */
+	}
+
+	.card.out-of-stock .out-of-stock {
+	  display: block; /* Tampilkan jika produk tidak tersedia */
+	}
 
     .card h3 {
       margin: 0.5rem 0;
@@ -234,6 +256,7 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20kursi%20kayu%20jati">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
+		  <div class="out-of-stock">Stok Habis</div>
 		</div>
 		<!-- Produk 2 -->
 		<div class="card">
@@ -244,6 +267,7 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20meja%20minimalis">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
+		  <div class="out-of-stock">Stok Habis</div>
 		</div>
 		<!-- Produk 3 (produk baru) -->
 		<div class="card">
@@ -254,6 +278,7 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20kursi%20meja%20kayu">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
+		  <div class="out-of-stock">Stok Habis</div>
 		</div>
 	  </div>
 	</div>
