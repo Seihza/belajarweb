@@ -89,37 +89,50 @@
     }
 	
 	/* Mengatur tampilan overlay untuk produk stok habis */
-	.card.out-of-stock {
-	  position: relative; /* Menjaga posisi overlay berada di atas card */
-	  pointer-events: none; /* Menonaktifkan klik pada card */
-	}
-	
-	.out-of-stock-text {
-	  position: absolute;
-	  top: 35%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  font-size: 1.2rem;
-	  color: white;
-	  font-weight: bold;
-	  z-index: 10;
-	  padding: 10px 20px; /* Memberi ruang di sekitar teks */
-	  background-color: rgba(255, 0, 0, 0.5); /* Latar belakang merah transparan */
-	  border-radius: 5px; /* Sudut melengkung */
-	  text-align: center;
-	}
-	
-	.card.out-of-stock .out-of-stock {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  background-color: rgba(255, 255, 255, 0.7); /* Overlay putih transparan */
-	  z-index: 5; /* Pastikan overlay tampil di atas gambar */
-	  display: block;
-	  
-	}
+.card.out-of-stock {
+  position: relative; /* Menjaga posisi overlay berada di atas card */
+  pointer-events: none; /* Menonaktifkan klik pada card */
+}
+
+/* Menampilkan pesan 'Stok Habis' dengan latar belakang */
+.out-of-stock-text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  z-index: 10;
+  padding: 10px 20px; /* Memberi ruang di sekitar teks */
+  background-color: rgba(255, 0, 0, 0.5); /* Latar belakang merah transparan */
+  border-radius: 5px; /* Sudut melengkung */
+  text-align: center;
+}
+
+/* Mengatur ukuran overlay */
+.card.out-of-stock .out-of-stock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Overlay putih transparan */
+  z-index: 5; /* Pastikan overlay tampil di atas gambar */
+  display: block;
+}
+
+/* Responsive untuk tampilan lebih kecil */
+@media (max-width: 767px) {
+  .out-of-stock-text {
+    font-size: 1rem; /* Mengurangi ukuran font pada perangkat kecil */
+    padding: 8px 12px; /* Mengurangi padding pada perangkat kecil */
+  }
+  
+  .card.out-of-stock .out-of-stock-text {
+    top: 30%; /* Menyesuaikan posisi teks untuk tampilan lebih kecil */
+  }
+}
 	
 	.card h3 {
       margin: 0.5rem 0;
@@ -304,11 +317,7 @@
 
   <footer>
     <p>&copy; 2024 Mebel Bekas Berkualitas</p>
-    <p>Temukan kami di media sosial:
-      <a href="https://facebook.com" target="_blank">Facebook</a> |
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-    </p>
-    <p>Powered by <a href="#">Mebel Bekas</a></p>
+    <p>Powered by <a href="#">Mebel Bekas @aziz.dev</a></p>
   </footer>
 </body>
 </html>
