@@ -11,7 +11,10 @@
       margin: 0;
       padding: 0;
       background-color: #f8f9fa;
-      line-height: 1.6;
+      height: 100vh; /* Pastikan tinggi halaman memenuhi viewport */
+      display: flex; /* Gunakan Flexbox */
+      justify-content: center; /* Pusatkan secara horizontal */
+      align-items: center; /* Pusatkan secara vertikal */
     }
     header {
       background-color: #343a40;
@@ -20,7 +23,14 @@
       padding: 1.5rem;
     }
     .container {
+      width: 90%; /* Ukuran default untuk layar kecil */
+      max-width: 600px; /* Batasi ukuran maksimum container */
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+      text-align: center; /* Pusatkan teks di dalam container */
     }
 
     /* Grid Produk */
@@ -39,10 +49,11 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
-    .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
+    .container img {
+      max-width: 100%; /* Pastikan gambar tidak melampaui lebar container */
+      height: auto; /* Proporsi tetap */
+      border-radius: 8px; /* Sudut gambar lebih halus */
+      margin-bottom: 1rem; /* Tambahkan jarak bawah */
     }
     .card h3 {
       margin: 0.5rem 0;
