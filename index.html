@@ -91,6 +91,7 @@
     }
     .card p {
       color: #555;
+	  font-size: 1rem; /* Ukuran font standar */
     }
 
     /* Deskripsi singkat produk */
@@ -160,6 +161,20 @@
       .product {
         grid-template-columns: 1fr;
       }
+	  /* Media Queries */
+@media (max-width: 767px) {
+  /* Mengubah ukuran teks pada tampilan mobile */
+  .card p {
+    font-size: 0.9rem; /* Ukuran teks harga lebih kecil pada mobile */
+  }
+
+  .product-description {
+    font-size: 0.8rem; /* Ukuran teks deskripsi lebih kecil pada mobile */
+  }
+
+  .card h3 {
+    font-size: 1.2rem; /* Ukuran teks judul lebih kecil pada mobile */
+  }
     }
   </style>
 </head>
@@ -246,7 +261,11 @@
 
   <footer>
     <p>&copy; 2024 Mebel Bekas Berkualitas</p>
-    <p>Powered by <a href="#">Mebel Bekas @Aziz.Dev</a></p>
+    <p>Temukan kami di media sosial:
+      <a href="https://facebook.com" target="_blank">Facebook</a> |
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </p>
+    <p>Powered by <a href="#">Mebel Bekas</a></p>
   </footer>
 </body>
 </html>
