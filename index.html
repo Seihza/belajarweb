@@ -88,27 +88,40 @@
       transform: scale(1.1); /* Menambahkan efek zoom ketika gambar dihover */
     }
 	
-	/* Ikon Stok Habis */
-	.out-of-stock {
+	/* Mengatur tampilan overlay untuk produk stok habis */
+	.card.out-of-stock {
+	  position: relative; /* Menjaga posisi overlay berada di atas card */
+	  pointer-events: none; /* Menonaktifkan klik pada card */
+	}
+	
+	.out-of-stock-text {
 	  position: absolute;
-	  top: 33%; /* Menempatkan ikon di tengah vertikal */
-	  left: 50%; /* Menempatkan ikon di tengah horizontal */
-	  transform: translate(-50%, -50%); /* Menggeser posisi ikon agar tepat di tengah */
-	  background-color: red; /* Background merah */
+	  top: 35%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  font-size: 1.2rem;
 	  color: white;
-	  padding: 5px 10px;
-	  border-radius: 5px;
-	  font-size: 1rem;
 	  font-weight: bold;
-	  display: block; /* Tampilkan ikon */
-	  z-index: 10; /* Pastikan ikon tampil di atas gambar */
+	  z-index: 10;
+	  padding: 10px 20px; /* Memberi ruang di sekitar teks */
+	  background-color: rgba(255, 0, 0, 0.5); /* Latar belakang merah transparan */
+	  border-radius: 5px; /* Sudut melengkung */
+	  text-align: center;
 	}
-
+	
 	.card.out-of-stock .out-of-stock {
-	  display: block; /* Tampilkan jika produk tidak tersedia */
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(255, 255, 255, 0.7); /* Overlay putih transparan */
+	  z-index: 5; /* Pastikan overlay tampil di atas gambar */
+	  display: block;
+	  
 	}
-
-    .card h3 {
+	
+	.card h3 {
       margin: 0.5rem 0;
     }
     .card p {
@@ -248,7 +261,7 @@
 		  </a>
 		</div>
 		<!-- Produk 1 -->
-		<div class="card">
+		<div class="card out-of-stock">
 		  <img src="https://raw.githubusercontent.com/ma8azis/belajarweb/refs/heads/master/img_kursi-meja-kayu-1.jpeg" alt="Kursi Kuliah Kayu Jati">
 		  <h3>Kursi Kuliah Kayu</h3>
 		  <p>Harga: Rp 200.000</p>
@@ -256,10 +269,12 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20kursi%20kayu%20jati">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
-		  <div class="out-of-stock">Stok Habis</div>
+		  <div class="out-of-stock">
+		  <div class="out-of-stock-text">Stok Habis</div>
+		</div>
 		</div>
 		<!-- Produk 2 -->
-		<div class="card">
+		<div class="card out-of-stock">
 		  <img src="https://raw.githubusercontent.com/ma8azis/belajarweb/refs/heads/master/img_meja-kursi-cafe_1.jpeg" alt="Kursi Meja Cafe">
 		  <h3>Kursi Meja Cafe</h3>
 		  <p>Harga: Rp 1.000.000</p>
@@ -267,10 +282,12 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20meja%20minimalis">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
-		  <div class="out-of-stock">Stok Habis</div>
+		  <div class="out-of-stock">
+		  <div class="out-of-stock-text">Stok Habis</div>
+		</div>
 		</div>
 		<!-- Produk 3 (produk baru) -->
-		<div class="card">
+		<div class="card out-of-stock">
 		  <img src="https://raw.githubusercontent.com/ma8azis/belajarweb/refs/heads/master/img_kursi-meja-kayu-1.jpeg" alt="Kursi Meja Kayu">
 		  <h3>Kursi Meja Kayu</h3>
 		  <p>Harga: Rp 1.200.000</p>
@@ -278,15 +295,20 @@
 		  <a class="whatsapp-btn" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20kursi%20meja%20kayu">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo"> Hubungi via WhatsApp
 		  </a>
-		  <div class="out-of-stock">Stok Habis</div>
+		  <div class="out-of-stock">
+		  <div class="out-of-stock-text">Stok Habis</div>
 		</div>
-	  </div>
+		</div>
 	</div>
 
 
   <footer>
     <p>&copy; 2024 Mebel Bekas Berkualitas</p>
-    <p>Powered by <a href="#">Mebel Bekas @Aziz.Dev</a></p>
+    <p>Temukan kami di media sosial:
+      <a href="https://facebook.com" target="_blank">Facebook</a> |
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </p>
+    <p>Powered by <a href="#">Mebel Bekas</a></p>
   </footer>
 </body>
 </html>
